@@ -1,0 +1,40 @@
+{
+  "name": "launcher",
+  "version": "1.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "11.5.0",
+    "electron-builder": "^22.11.7"
+  },
+  "dependencies": {
+    "electron-updater": "^4.3.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AxwerKS/Habbi-Launcher.git"
+  },
+  "asar": true,
+  "extraResources": [
+    "./public/**",
+    "./resources/**"
+  ],
+  "build": {
+    "extraResources": [
+      {
+        "from": "./resources/",
+        "to": "resources",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
+  }
+}
